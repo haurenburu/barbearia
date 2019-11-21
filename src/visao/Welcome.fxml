@@ -6,7 +6,6 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-
 <VBox alignment="TOP_CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controle.WelcomeController">
    <children>
       <Label fx:id="lbl_app_name" text="Barbearia">
@@ -17,12 +16,12 @@
             <Insets bottom="15.0" left="15.0" right="15.0" top="30.0" />
          </VBox.margin>
       </Label>
-      <JFXButton fx:id="btn_signin" text="Fazer login">
+      <JFXButton fx:id="btn_signin" onAction="#btnLoginAction" text="Fazer login">
          <VBox.margin>
             <Insets bottom="15.0" left="15.0" right="15.0" top="15.0" />
          </VBox.margin>
       </JFXButton>
-      <JFXButton fx:id="btn_signup" text="Criar conta">
+      <JFXButton fx:id="btn_signup" onAction="#btnRegisterAction" text="Criar conta">
          <VBox.margin>
             <Insets bottom="15.0" left="15.0" right="15.0" top="15.0" />
          </VBox.margin>

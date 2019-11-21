@@ -24,7 +24,7 @@ import javafx.stage.Stage;
  *
  * @author Hauren
  */
-public class WelcomeController implements Initializable{
+public class WelcomeController implements Initializable {
     @FXML
     private JFXButton btn_signin;
 
@@ -33,29 +33,28 @@ public class WelcomeController implements Initializable{
     
     @FXML
     private void btnLoginAction(ActionEvent event) {
-        System.out.println("asdas");
         //to::
-        //Stage mainStage = (Stage) ((Node)event.getSource()).getScene().getWindow();
-        //mesmaJanela(mainStage, "Login");
+        Stage mainStage = (Stage)((Node)event.getSource()).getScene().getWindow();
+        mesmaJanela(mainStage, "Login"); 
+        
     }
     @FXML
     private void btnRegisterAction(ActionEvent event) {
         // to::
-        //Stage mainStage = (Stage) ((Node)event.getSource()).getScene().getWindow();
-        //mesmaJanela(mainStage, "Cadastro");
+        Stage mainStage = (Stage) ((Node)event.getSource()).getScene().getWindow();
+        mesmaJanela(mainStage, "Cadastro");
     }
     
     public void mesmaJanela(Stage mainStage, String tela){
         Parent root = null;
         try {
-            root = FXMLLoader.load(getClass().getResource("/visao/Login.fxml"));
+            root = FXMLLoader.load(getClass().getResource("/visao/"+tela+".fxml"));
         } catch (IOException ex) {
             Logger.getLogger(WelcomeController.class.getName()).log(Level.SEVERE, null, ex);
         }
         
         mainStage.setScene(new Scene(root));
         mainStage.show();
-        
     }
     @Override
     public void initialize(URL url, ResourceBundle rb){
