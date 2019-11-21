@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXPasswordField?>
+<?import com.jfoenix.controls.JFXTextField?>
+<?import com.jfoenix.controls.JFXToggleButton?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.RadioButton?>
+<?import javafx.scene.control.ToggleGroup?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+
+
+<VBox alignment="TOP_CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="500.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controle.CadastroController">
+   <children>
+      <JFXTextField fx:id="tf_name" labelFloat="true" promptText="Nome">
+         <VBox.margin>
+            <Insets bottom="15.0" left="30.0" right="30.0" top="30.0" />
+         </VBox.margin>
+      </JFXTextField>
+      <JFXTextField fx:id="tf_username" promptText="Usuario (CPF)">
+         <VBox.margin>
+            <Insets bottom="15.0" left="30.0" right="30.0" top="15.0" />
+         </VBox.margin>
+      </JFXTextField>
+      <JFXPasswordField fx:id="tf_password" labelFloat="true" promptText="Senha">
+         <VBox.margin>
+            <Insets bottom="15.0" left="30.0" right="30.0" top="15.0" />
+         </VBox.margin>
+      </JFXPasswordField>
+      <JFXPasswordField fx:id="tf_password_repeat" labelFloat="true" promptText="Repetir a senha">
+         <VBox.margin>
+            <Insets bottom="15.0" left="30.0" right="30.0" top="15.0" />
+         </VBox.margin>
+      </JFXPasswordField>
+      <HBox alignment="CENTER" prefHeight="58.0" prefWidth="600.0">
+         <children>
+            <RadioButton fx:id="rb_male" mnemonicParsing="false" text="Masculino">
+               <HBox.margin>
+                  <Insets bottom="5.0" left="10.0" right="10.0" top="5.0" />
+               </HBox.margin>
+               <toggleGroup>
+                  <ToggleGroup fx:id="sexo" />
+               </toggleGroup>
+            </RadioButton>
+            <RadioButton fx:id="rb_female" mnemonicParsing="false" text="Feminino" toggleGroup="$sexo">
+               <HBox.margin>
+                  <Insets bottom="5.0" left="10.0" right="10.0" top="5.0" />
+               </HBox.margin>
+            </RadioButton>
+            <RadioButton fx:id="rb_other" mnemonicParsing="false" text="Outro">
+               <toggleGroup>
+                  <ToggleGroup fx:id="sexo1" />
+               </toggleGroup>
+            </RadioButton>
+         </children>
+         <opaqueInsets>
+            <Insets />
+         </opaqueInsets>
+      </HBox>
+      <JFXToggleButton fx:id="tb_funcionario" text="Funcionario" />
+      <JFXButton fx:id="btn_signup" text="Cadastrar" />
+   </children>
+</VBox>
