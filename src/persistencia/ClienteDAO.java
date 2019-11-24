@@ -9,6 +9,6 @@ package persistencia;
  *
  * @author Hauren
  */
-public class LoginDAO {
+public class ClienteDAO {
     
 }

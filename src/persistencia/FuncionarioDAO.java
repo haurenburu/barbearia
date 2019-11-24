@@ -9,6 +9,6 @@ package persistencia;
  *
  * @author Hauren
  */
-public class CadastroDAO {
+public class FuncionarioDAO {
     
 }
