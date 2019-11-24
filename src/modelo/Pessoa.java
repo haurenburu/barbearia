@@ -17,12 +17,13 @@ public abstract class Pessoa {
     private String telefone;
     private String senha;
 
-    public Pessoa(String cpf, String nome, String sexo, String endereco, String telefone) {
+    public Pessoa(String cpf, String nome, String sexo, String endereco, String telefone, String senha) {
         this.cpf = cpf;
         this.nome = nome;
         this.sexo = sexo;
         this.endereco = endereco;
         this.telefone = telefone;
+        this.senha = senha;
     }
 
     public String getCpf() {

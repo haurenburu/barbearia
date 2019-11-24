@@ -17,7 +17,7 @@ public class Conexao {
     //ATRIBUTOS DA CLASSE
 	private static final String USUARIO = "admin";	
 	private static final String SENHA = "admin";
-	private static final String CAMINHO = "jdbc:h2:~/GBib/biblioteca;INIT=runscript from '~/GBib/createBiblioteca.sql'";
+	private static final String CAMINHO = "jdbc:h2:~/biblioteca;INIT=runscript from '~/GBib/createBiblioteca.sql'";
 	private static final String DRIVER = "org.h2.Driver";
 	private Connection conexao;		
 	
