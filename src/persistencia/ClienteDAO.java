@@ -94,8 +94,11 @@ public class ClienteDAO implements DAO{
             System.out.println("Erro ao alterar dados do cliente no banco de dados " + e.getMessage());
         }
     }
-    
-    
-    
+
+    @Override
+    public void alterarFnc(String cpf, String nome, String sexo, String enredeco, String telefone, String senha, double salario) {
+        // nadah
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
     
 }

@@ -14,5 +14,7 @@ public interface DAO {
     public abstract void inserir(Object obj);
     public abstract void excluir(String cpf);
     public abstract void alterar(String cpf, String nome, String sexo, String enredeco, String telefone, String senha);
+    public abstract void alterarFnc(String cpf, String nome, String sexo, String enredeco, String telefone, String senha, double salario);
+    
     
 }

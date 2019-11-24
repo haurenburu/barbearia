@@ -13,8 +13,8 @@ public class Funcionario extends Pessoa {
     private double salario;
     private int cortes;
 
-    public Funcionario(double salario, String cpf, String nome, String sexo, String endereco, String telefone) {
-        super(cpf, nome, sexo, endereco, telefone);
+    public Funcionario(double salario, String cpf, String nome, String sexo, String endereco, String telefone, String senha) {
+        super(cpf, nome, sexo, endereco, telefone, senha);
         this.salario = salario;
     }
 
