@@ -15,6 +15,7 @@ import javafx.scene.control.ToggleGroup;
 
 import modelo.Cliente;
 import modelo.Funcionario;
+import persistencia.ClienteDAO;
 
 /**
  *
@@ -44,7 +45,10 @@ public class CadastroController {
     private RadioButton rb_other;
     
     @FXML
-    private JFXToggleButton tb_funcionario;
+    private JFXTextField tf_telefone;
+
+    @FXML
+    private JFXTextField tf_endereco;
     
     @FXML
     private ToggleGroup sexo;
@@ -55,15 +59,18 @@ public class CadastroController {
         String cpf = tf_username.getText();
         String senha = tf_password.getText();
         String senha2 = tf_password_repeat.getText();
+        String telefone = tf_telefone.getText();
+        String endereco = tf_endereco.getText();
         // radio button
         RadioButton selectedSexo = (RadioButton) sexo.getSelectedToggle();
         String sexoText = selectedSexo.getText();
         
+       
         
         System.out.println(sexoText);
         
         
         
-        //Cliente cli = new Cliente(null, null, null, null, null, null)
+        Cliente cli = new Cliente(cpf, nome, senha, endereco, telefone, senha);
     }
 }
