@@ -10,8 +10,14 @@ import com.jfoenix.controls.JFXTextField;
 import com.jfoenix.controls.JFXToggleButton;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
+import javafx.scene.Node;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
+import javafx.scene.control.Alert;
 import javafx.scene.control.RadioButton;
 import javafx.scene.control.ToggleGroup;
+import javafx.stage.Stage;
 
 import modelo.Cliente;
 import modelo.Funcionario;
@@ -43,13 +49,13 @@ public class CadastroController {
 
     @FXML
     private RadioButton rb_other;
-    
+
     @FXML
     private JFXTextField tf_telefone;
 
     @FXML
     private JFXTextField tf_endereco;
-    
+
     @FXML
     private ToggleGroup sexo;
 
@@ -64,13 +70,35 @@ public class CadastroController {
         // radio button
         RadioButton selectedSexo = (RadioButton) sexo.getSelectedToggle();
         String sexoText = selectedSexo.getText();
-        
-       
-        
-        System.out.println(sexoText);
-        
-        
-        
-        Cliente cli = new Cliente(cpf, nome, senha, endereco, telefone, senha);
+
+        // tratamento
+        if (nome.isEmpty() || cpf.isEmpty() || senha.isEmpty() || senha2.isEmpty() || telefone.isEmpty() || endereco.isEmpty()) {
+            Alert alert = new Alert(Alert.AlertType.INFORMATION, "Os campos não podem ficar vazios!");
+            alert.show();
+        } else if (!senha.equals(senha2)) {
+            Alert alert = new Alert(Alert.AlertType.INFORMATION, "As senhas não correspodem!");
+            alert.show();
+        } else {
+            ClienteDAO daoc = new ClienteDAO();
+
+            Cliente cli = new Cliente(cpf, nome, sexoText, endereco, telefone, senha);
+
+            Stage mainStage = (Stage) ((Node)event.getSource()).getScene().getWindow();
+            Parent root = null;
+            
+            try {
+                daoc.inserir(cli);
+                Alert alert = new Alert(Alert.AlertType.INFORMATION, "Cadastrado com sucesso!");
+                alert.show();
+                root = FXMLLoader.load(getClass().getResource("/visao/Login.fxml"));
+            } catch (Exception e) {
+                System.out.println(e.getMessage());
+                
+                Alert alert = new Alert(Alert.AlertType.ERROR, "Algo deu errado!");
+                alert.show();
+            }
+            mainStage.setScene(new Scene(root));
+            mainStage.show();
+        }
     }
 }
