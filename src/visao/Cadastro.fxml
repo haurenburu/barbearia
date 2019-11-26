@@ -34,7 +34,7 @@
       </JFXPasswordField>
       <HBox alignment="CENTER" prefHeight="58.0" prefWidth="600.0">
          <children>
-            <RadioButton fx:id="rb_male" mnemonicParsing="false" text="Masculino">
+            <RadioButton fx:id="rb_male" mnemonicParsing="false" selected="true" text="Masculino">
                <HBox.margin>
                   <Insets bottom="5.0" left="10.0" right="10.0" top="5.0" />
                </HBox.margin>
@@ -47,11 +47,7 @@
                   <Insets bottom="5.0" left="10.0" right="10.0" top="5.0" />
                </HBox.margin>
             </RadioButton>
-            <RadioButton fx:id="rb_other" mnemonicParsing="false" text="Outro">
-               <toggleGroup>
-                  <ToggleGroup fx:id="sexo1" />
-               </toggleGroup>
-            </RadioButton>
+            <RadioButton fx:id="rb_other" mnemonicParsing="false" text="Outro" toggleGroup="$sexo" />
          </children>
          <opaqueInsets>
             <Insets />

@@ -11,6 +11,10 @@ import com.jfoenix.controls.JFXToggleButton;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.RadioButton;
+import javafx.scene.control.ToggleGroup;
+
+import modelo.Cliente;
+import modelo.Funcionario;
 
 /**
  *
@@ -41,9 +45,25 @@ public class CadastroController {
     
     @FXML
     private JFXToggleButton tb_funcionario;
+    
+    @FXML
+    private ToggleGroup sexo;
 
     @FXML
     void cadasBtnAction(ActionEvent event) {
-        System.out.println("askdpasd");
+        String nome = tf_name.getText();
+        String cpf = tf_username.getText();
+        String senha = tf_password.getText();
+        String senha2 = tf_password_repeat.getText();
+        // radio button
+        RadioButton selectedSexo = (RadioButton) sexo.getSelectedToggle();
+        String sexoText = selectedSexo.getText();
+        
+        
+        System.out.println(sexoText);
+        
+        
+        
+        //Cliente cli = new Cliente(null, null, null, null, null, null)
     }
 }
