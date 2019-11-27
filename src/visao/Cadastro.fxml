@@ -62,6 +62,11 @@
             <Insets />
          </opaqueInsets>
       </HBox>
-      <JFXButton fx:id="btn_signup" onAction="#cadasBtnAction" text="Cadastrar" />
+      <HBox alignment="TOP_CENTER" prefHeight="100.0" prefWidth="200.0">
+         <children>
+            <JFXButton fx:id="btn_voltar" onAction="#voltBtnAction" text="Voltar" />
+            <JFXButton fx:id="btn_signup" onAction="#cadasBtnAction" text="Cadastrar" />
+         </children>
+      </HBox>
    </children>
 </VBox>

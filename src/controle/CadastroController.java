@@ -8,6 +8,9 @@ package controle;
 import com.jfoenix.controls.JFXPasswordField;
 import com.jfoenix.controls.JFXTextField;
 import com.jfoenix.controls.JFXToggleButton;
+import java.io.IOException;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -83,9 +86,9 @@ public class CadastroController {
 
             Cliente cli = new Cliente(cpf, nome, sexoText, endereco, telefone, senha);
 
-            Stage mainStage = (Stage) ((Node)event.getSource()).getScene().getWindow();
+            Stage mainStage = (Stage) ((Node) event.getSource()).getScene().getWindow();
             Parent root = null;
-            
+
             try {
                 daoc.inserir(cli);
                 Alert alert = new Alert(Alert.AlertType.INFORMATION, "Cadastrado com sucesso!");
@@ -93,12 +96,26 @@ public class CadastroController {
                 root = FXMLLoader.load(getClass().getResource("/visao/Login.fxml"));
             } catch (Exception e) {
                 System.out.println(e.getMessage());
-                
+
                 Alert alert = new Alert(Alert.AlertType.ERROR, "Algo deu errado!");
                 alert.show();
             }
             mainStage.setScene(new Scene(root));
             mainStage.show();
         }
+    }
+
+    @FXML
+    void voltBtnAction(ActionEvent event) {
+        Stage mainStage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+        Parent root = null;
+
+        try {
+            root = FXMLLoader.load(getClass().getResource("/visao/Welcome.fxml"));
+        } catch (IOException ex) {
+            Logger.getLogger(WelcomeController.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        mainStage.setScene(new Scene(root));
+        mainStage.show();
     }
 }

@@ -58,6 +58,7 @@ public class LoginController {
 
             try {
                 root = FXMLLoader.load(getClass().getResource("/visao/Welcome.fxml"));
+                System.out.println(clien.toString());
             } catch (IOException ex) {
                 Logger.getLogger(WelcomeController.class.getName()).log(Level.SEVERE, null, ex);
             }
@@ -66,7 +67,22 @@ public class LoginController {
 
         }
 
-        System.out.println(clien.toString());
-
     }
+
+    @FXML
+    void voltBtnAction(ActionEvent event) {
+            Stage mainStage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+            Parent root = null;
+
+            try {
+                root = FXMLLoader.load(getClass().getResource("/visao/Welcome.fxml"));
+            } catch (IOException ex) {
+                Logger.getLogger(WelcomeController.class.getName()).log(Level.SEVERE, null, ex);
+            }
+            mainStage.setScene(new Scene(root));
+            mainStage.show();
+        
+     
+    }
+
 }
